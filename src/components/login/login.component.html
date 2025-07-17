@@ -1,0 +1,20 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form #loginForm="ngForm" (ngSubmit)="onLogin()">
+    <label for="username">Username</label>
+    <input id="username" name="username" [(ngModel)]="username" required #usernameCtrl="ngModel" />
+    <div *ngIf="usernameCtrl.invalid && loginForm.submitted" class="error-msg">
+      Username is required.
+    </div>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" [(ngModel)]="password" required #passwordCtrl="ngModel" />
+    <div *ngIf="passwordCtrl.invalid && loginForm.submitted" class="error-msg">
+      Password is required.
+    </div>
+
+    <div *ngIf="errorMsg && usernameCtrl.valid && passwordCtrl.valid" class="error-msg">{{ errorMsg }}</div>
+    <button mat-button type="submit">Login</button>
+    <button mat-button type="button" (click)="goToSignup()">Sign Up</button>
+  </form>
+</div>

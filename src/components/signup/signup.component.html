@@ -1,0 +1,17 @@
+<div class="auth-form">
+      <h2>Sign Up</h2>
+
+  <form #signupForm="ngForm" (ngSubmit)="onSignup()">
+    <label for="username">Username</label>
+    <input id="username" name="username" [(ngModel)]="username" required />
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" [(ngModel)]="password" required />
+    <div *ngIf="message" class="message">{{ message }}</div>
+    <button mat-button type="submit">Register</button>
+    <span style="color:#1976d2; cursor:pointer; text-decoration:underline; margin-left:8px;" (click)="openForgotPasswordDialog()">Forgot Password?</span>
+
+    <button mat-icon-button type="button" (click)="goToLogin()" aria-label="Back to Login">
+      <span class="material-icons">arrow_back</span>
+    </button>
+  </form>
+</div>

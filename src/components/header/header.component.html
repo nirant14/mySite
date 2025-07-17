@@ -1,4 +1,24 @@
 <header>
-  <h1>Welcome to my site</h1>
+  <div class="header-row">
+    <h1 class="site-title">My site</h1>
+    <nav class="header-tabs" *ngIf="isLoggedIn">
+      <a mat-button routerLink="/" routerLinkActive="active-tab" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a mat-button routerLink="/pictures" routerLinkActive="active-tab">Pictures</a>
+      <a mat-button routerLink="/videos" routerLinkActive="active-tab">Videos</a>
+      <a mat-button routerLink="/menu" routerLinkActive="active-tab">Menu</a>
+      <a mat-button routerLink="/help" routerLinkActive="active-tab">Help</a>
+      <a *ngIf="isAdmin" mat-button routerLink="/admin" routerLinkActive="active-tab">Admin</a>
+    </nav>
+    <div class="user-menu" *ngIf="isLoggedIn">
+      <button mat-button [matMenuTriggerFor]="userMenu" class="user-btn">
+        {{ username }} &#x25BC;
+      </button>
+      <mat-menu #userMenu="matMenu">
+        <button mat-menu-item (click)="openChangePasswordDialog()">Change Password</button>
+        <button mat-menu-item (click)="onSignOut()">Logout</button>
+
+      </mat-menu>
+    </div>
+  </div>
   <!-- Add navigation or logo here -->
 </header>

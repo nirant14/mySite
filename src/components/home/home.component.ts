@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  @Output() signOut = new EventEmitter<void>();
 
+  onSignOut() {
+    this.signOut.emit();
+  }
 }

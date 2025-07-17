@@ -3,4 +3,96 @@ header {
   color: white;
   padding: 1rem;
   text-align: center;
+  position: relative;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.site-title {
+  margin: 0 2rem 0 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+.header-tabs {
+  flex: 1;
+  min-width: 0;
+  color: #ffffff;
+  margin: 0 0 0 -76rem;
+}
+
+.signout-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: #fff;
+  color: #3f51b5;
+  font-weight: 600;
+}
+
+.user-menu {
+  position: static;
+  margin-left: 2rem;
+}
+.user-btn {
+  background: none;
+  color: #fff !important;
+  font-weight: 500;
+  border: none;
+  border-radius: 0;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  box-shadow: none;
+  outline: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+.user-btn:hover, .user-btn:focus {
+  background: none;
+  color: #c5cae9;
+}
+.dropdown {
+  position: absolute;
+  right: 0;
+  background: #fff;
+  color: #3f51b5;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  margin-top: 0.5rem;
+  min-width: 120px;
+  z-index: 10;
+}
+.dropdown-item {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #3f51b5;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.dropdown-item:hover {
+  background: #f1f1f1;
+}
+.user-menu .mat-menu-trigger {
+  width: 100%;
+}
+
+::ng-deep .mat-mdc-menu-panel {
+  min-width: 101px !important;
+}
+::ng-deep .cdk-overlay-pane {
+  transform-origin: left top !important;
+  margin-left: 19px !important;
+}
+
+.active-tab {
+  color: #fff !important;
+  font-weight: bold;
 }

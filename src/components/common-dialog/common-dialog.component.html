@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+<div mat-dialog-content>
+  <ng-content></ng-content>
+  <div *ngIf="data.fields">
+    <div *ngFor="let field of data.fields">
+      <label>{{ field.label }}</label>
+      <input [(ngModel)]="field.value" [type]="field.type || 'text'" />
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions style="display: flex; justify-content: flex-end; gap: 2rem;">
+  <span style="color: #2196f3; cursor: pointer;" (click)="onCancel()">Cancel</span>
+  <span style="color: #2196f3; cursor: pointer; margin-left: 0.5rem;     margin-right: 1.5rem;" (click)="onOk()">OK</span>
+</div>
